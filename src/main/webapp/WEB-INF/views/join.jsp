@@ -51,5 +51,30 @@
        
        <%@ include file="templates/footer.jsp" %>
    </div>
+   
+   <script>
+     let joinbtn = document.getElementById("joinbtn");
+     let joinfrm = document.getElementById("join");
+	 
+     joinbtn.addEventListener('click', checkjoinfrm);
+	
+     function checkjoinfrm(){
+	     let userid = document.getElementById("userid");
+	     let passwd = document.getElementById("passwd");
+	     let repasswd = document.getElementById("repasswd");
+	     let name = document.getElementById("name");
+	     
+	     if (userid.value == "") alert("아이디를 입력하세요!");
+	     else if (passwd.value == "") alert("비밀번호를 입력하세요!");
+	     else if (repasswd.value == "") alert("비밀번호 확인을 입력하세요!");
+	     else if (name.value == "") alert("이름을 입력하세요!");
+	     else if (passwd.value != repasswd.value) alert("비밀번호가 서로 일치하지 않아요!");
+	     else {
+	    	 joinfrm.method = "post";
+	    	 joinfrm.submit();
+	     }
+	     
+     }
+   </script>
 </body>
 </html>
