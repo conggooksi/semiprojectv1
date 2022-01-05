@@ -40,5 +40,29 @@
        
        <%@ include file="templates/footer.jsp" %>
    </div>
+   <script>
+   	// es2015 (javascript -> emcascript)
+   	// vanillaJS - no framework
+   	let loginbtn = document.getElementById('loginbtn');
+   	let loginfrm = document.getElementById('login');
+   	
+   	loginbtn.addEventListener('click', checkloginfrm);
+   	
+   	function checkloginfrm() {
+   		// 폼의 입력폼에 접근하는 방법 1 : getElementById
+   		let userid = document.getElementById('userid');
+   		// 폼의 입력폼에 접근하는 방법 2 : document.폼이름
+   		let passwd = document.login.passwd;
+   		
+   		if(userid.value == '') alert('아이디를 입력하세요!');
+   		else if(passwd.value == '') alert('비밀번호를 입력하세요!');
+   		else{
+   			loginfrm.method = "post";
+   			loginfrm.submit();
+   		}
+   	}
+   
+   </script>
+   
 </body>
 </html>

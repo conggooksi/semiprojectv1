@@ -1,6 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+
+<%-- 로그인 하지 않았다면 로그인 페이지로 강제이동 --%>
+<c:if test="${empty sessionScope.userid}">
+	<c:redirect url="/login" />
+</c:if>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,20 +31,20 @@
             <h2>회원정보</h2>        
             <div id="myinfo">
                 <div><label>아이디</label>
-                kappa </div>
+                ${m.userid} </div>
                 
                 <div><label>이름</label>
-                배두나</div>
+                ${m.name}</div>
                 
                 <div><label>이메일</label>
-                kappa@gmail.com</div>
+                ${m.email}</div>
                 
                 <div><label>가입일</label>
-                2021.12.28 11:11:24</div>
+                ${m.regdate}</div>
             </div>
         </div>
     
-       <%@ include file="templates/header.jsp" %>
+       <%@ include file="templates/footer.jsp" %>
     </div>
 </body>
 </html>

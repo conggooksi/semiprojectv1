@@ -10,6 +10,16 @@ public class MemberVO {
 	
 	public MemberVO() {	}
 
+
+	public MemberVO(String userid, String email, String name, String regdate) {
+		this.userid = userid;
+		this.email = email;
+		this.name = name;
+		this.regdate = regdate;
+	}
+
+
+
 	public String getMno() {
 		return mno;
 	}
