@@ -97,4 +97,11 @@ public class MemberController {
 		
 		return returnPage;
 	}
+	
+	// 로그인 실패시 처리
+	@GetMapping("/loginfail")
+	public String loginfail() {
+		
+		return "loginfail";
+	}
 }
